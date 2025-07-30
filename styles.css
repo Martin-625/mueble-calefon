@@ -7,7 +7,7 @@ body {
     padding: 10px;
     font-family: Arial, sans-serif;
     background: #f0f0f0;
-    touch-action: none;
+    /* Permitir scroll normal en la página */
 }
 
 .container {
@@ -35,7 +35,9 @@ body {
     background: #808080;
     position: relative;
     cursor: grab;
-    touch-action: none;
+    /* Solo bloquear touch dentro del viewer 3D */
+    touch-action: manipulation;
+    overflow: hidden;
 }
 
 .viewer:active {
@@ -84,12 +86,12 @@ body {
 
 .zoom-controls {
     position: absolute;
-    top: 10px;
-    right: 10px;
+    top: 15px;
+    right: 15px;
     display: flex;
     flex-direction: column;
-    gap: 5px;
-    z-index: 10;
+    gap: 8px;
+    z-index: 1000;
 }
 
 .zoom-btn {
@@ -97,13 +99,15 @@ body {
     color: white;
     border: none;
     border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    font-size: 18px;
+    width: 45px;
+    height: 45px;
+    font-size: 20px;
+    font-weight: bold;
     cursor: pointer;
     user-select: none;
     touch-action: manipulation;
     transition: all 0.2s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 }
 
 .zoom-btn:active {
@@ -234,6 +238,27 @@ body {
     }
 }
 
+/* Mejora para móviles */
+@media (max-width: 767px) {
+    .zoom-controls {
+        top: 20px;
+        right: 20px;
+        gap: 10px;
+    }
+
+    .zoom-btn {
+        width: 50px;
+        height: 50px;
+        font-size: 22px;
+    }
+
+    .control-btn {
+        min-width: 140px;
+        padding: 15px 18px;
+        font-size: 15px;
+    }
+}
+
 /* =================================
    MEJORAS DE ACCESIBILIDAD
    ================================= */
@@ -244,8 +269,7 @@ body {
     outline-offset: 2px;
 }
 
-/* Prevencion de selección de texto */
-.viewer,
+/* Prevencion de selección de texto solo en elementos interactivos */
 .control-btn,
 .zoom-btn {
     -webkit-user-select: none;
