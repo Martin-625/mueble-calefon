@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Mueble Desmontable para Calefón</title>
+
+    <!-- Three.js CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="title">Mueble Desmontable para Calefón James 60L</h1>
+
+        <div class="viewer" id="viewer">
+            <div class="zoom-controls">
+                <button class="zoom-btn" onclick="zoomIn()">+</button>
+                <button class="zoom-btn" onclick="zoomOut()">−</button>
+            </div>
+        </div>
+
+        <div class="controls">
+            <button class="control-btn" onclick="showExploded()">Vista Explosionada</button>
+            <button class="control-btn" onclick="showAssembled()">Vista Armado</button>
+            <button class="control-btn" onclick="showDoors()">Mostrar Puertas</button>
+            <button class="control-btn" onclick="resetView()">Centrar Vista</button>
+        </div>
+
+        <div class="mobile-instructions">
+            <strong>📱 Controles Móvil:</strong> Deslizá con un dedo para rotar el mueble. Usa los botones + y - para
+            zoom. Presiona los botones para ver diferentes vistas.
+        </div>
+
+        <div class="warning">
+            <strong>💡 Controles:</strong> Arrastrá con el mouse/dedo para rotar la vista del mueble. Usá la rueda del
+            mouse o botones +/- para zoom. Click en los botones para ver diferentes vistas.
+        </div>
+
+        <div class="specs">
+            <div class="spec-section">
+                <h3>📏 Dimensiones Estándar</h3>
+                <div class="dimensions">
+                    <strong>Medidas reales del espacio:</strong><br>
+                    • Ancho: 120cm<br>
+                    • Alto: 55cm<br>
+                    • Profundidad: 45cm
+                </div>
+                <div class="dimensions">
+                    <strong>Mueble a construir:</strong><br>
+                    • Ancho: 120cm<br>
+                    • Alto: 55cm<br>
+                    • Profundidad: 45cm<br>
+                    • <strong>Puertas:</strong> Corredizas internas
+                </div>
+            </div>
+
+            <div class="spec-section">
+                <h3>🛠️ Posibles Materiales</h3>
+                <ul class="material-list">
+                    <li><strong>MDF Blanco 18mm:</strong> Para estructura principal</li>
+                    <li><strong>Placa Fórmica Blanca:</strong> Para puertas (más resistente)</li>
+                    <li><strong>Rieles internos:</strong> Sistema de corredizas internas</li>
+                    <li><strong>Guías plásticas:</strong> Para deslizamiento suave</li>
+                    <li><strong>Conectores desmontables:</strong> Excéntricos o minifix</li>
+                    <li><strong>Tornillos autorroscantes:</strong> 4x30mm</li>
+                    <li><strong>Rejillas de ventilación:</strong> Para ambas puertas</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="assembly-steps">
+            <h3>🔧 Sistema Desmontable - Instrucciones</h3>
+
+            <div class="step">
+                <strong>1. Base (Pieza A):</strong>
+                <p>Cortar MDF 18mm: 120cm x 45cm. Perforar agujeros para conectores excéntricos en los bordes donde se
+                    unirá con el lateral y frente.</p>
+            </div>
+
+            <div class="step">
+                <strong>2. Lateral Derecho (Pieza B):</strong>
+                <p>Cortar MDF 18mm: 45cm x 55cm. Perforar agujeros para conectores en base y puntos de unión con el
+                    frente.</p>
+            </div>
+
+            <div class="step">
+                <strong>3. Marco Frontal (Pieza C):</strong>
+                <p>Marco de MDF 18mm formando una "U". Incluir riel interno superior e inferior para puertas corredizas
+                    internas.</p>
+            </div>
+
+            <div class="step">
+                <strong>4. Puertas Corredizas INTERNAS:</strong>
+                <p>Dos puertas de placa fórmica de 62cm x 50cm cada una. Se deslizan una sobre la otra internamente. Al
+                    abrir, una puerta queda detrás de la otra, dejando la mitad del mueble accesible.</p>
+            </div>
+
+            <div class="step">
+                <strong>5. Sistema de Rieles Internos:</strong>
+                <p>Instalar rieles superior e inferior dentro del marco. Las puertas se deslizan una sobre la otra.
+                    Cuando abres, la puerta derecha se desliza hacia la izquierda, quedando encima de la puerta
+                    izquierda, dejando accesible solo la mitad izquierda del mueble.</p>
+            </div>
+
+            <div class="step">
+                <strong>6. Conexiones Desmontables:</strong>
+                <p>Usar conectores excéntricos (minifix) para unir las 3 piezas principales. Permiten desarmar sin
+                    herramientas.</p>
+            </div>
+
+            <div class="step">
+                <strong>7. Montaje:</strong>
+                <p>1) Fijar base a pared, 2) Conectar lateral derecho, 3) Instalar marco frontal con rieles, 4) Colocar
+                    puertas en sistema interno.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+</body>
+
+</html>

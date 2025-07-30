@@ -1,0 +1,255 @@
+/* =================================
+   ESTILOS GENERALES
+   ================================= */
+
+body {
+    margin: 0;
+    padding: 10px;
+    font-family: Arial, sans-serif;
+    background: #f0f0f0;
+    touch-action: none;
+}
+
+.container {
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.title {
+    text-align: center;
+    color: #333;
+    margin-bottom: 15px;
+    font-size: 1.2em;
+}
+
+/* =================================
+   VISOR 3D
+   ================================= */
+
+.viewer {
+    width: 100%;
+    height: 60vh;
+    min-height: 400px;
+    border: 2px solid #333;
+    border-radius: 10px;
+    background: #808080;
+    position: relative;
+    cursor: grab;
+    touch-action: none;
+}
+
+.viewer:active {
+    cursor: grabbing;
+}
+
+/* =================================
+   CONTROLES
+   ================================= */
+
+.controls {
+    text-align: center;
+    margin: 15px 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+}
+
+.control-btn {
+    background: #4CAF50;
+    color: white;
+    padding: 12px 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    min-width: 120px;
+    touch-action: manipulation;
+    user-select: none;
+    transition: all 0.2s ease;
+}
+
+.control-btn:hover {
+    background: #45a049;
+}
+
+.control-btn:active {
+    background: #3d8b40;
+    transform: scale(0.98);
+}
+
+/* =================================
+   CONTROLES DE ZOOM
+   ================================= */
+
+.zoom-controls {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    z-index: 10;
+}
+
+.zoom-btn {
+    background: rgba(76, 175, 80, 0.9);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+    cursor: pointer;
+    user-select: none;
+    touch-action: manipulation;
+    transition: all 0.2s ease;
+}
+
+.zoom-btn:active {
+    background: rgba(69, 160, 73, 0.9);
+    transform: scale(0.95);
+}
+
+/* =================================
+   SECCIONES DE CONTENIDO
+   ================================= */
+
+.specs {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.spec-section {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.spec-section h3 {
+    color: #333;
+    margin-top: 0;
+    border-bottom: 2px solid #4CAF50;
+    padding-bottom: 10px;
+    font-size: 1.1em;
+}
+
+.material-list {
+    list-style: none;
+    padding: 0;
+}
+
+.material-list li {
+    padding: 8px 0;
+    border-bottom: 1px solid #eee;
+    font-size: 0.9em;
+}
+
+.assembly-steps {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-top: 15px;
+}
+
+.step {
+    margin: 10px 0;
+    padding: 12px;
+    background: #f9f9f9;
+    border-left: 4px solid #4CAF50;
+    border-radius: 5px;
+    font-size: 0.9em;
+}
+
+.dimensions {
+    background: #e8f5e8;
+    padding: 12px;
+    border-radius: 5px;
+    margin: 8px 0;
+    font-size: 0.9em;
+}
+
+/* =================================
+   MENSAJES Y ADVERTENCIAS
+   ================================= */
+
+.warning {
+    background: #fff3cd;
+    border: 1px solid #ffeaa7;
+    color: #856404;
+    padding: 12px;
+    border-radius: 5px;
+    margin: 15px 0;
+    font-size: 0.9em;
+}
+
+.mobile-instructions {
+    background: #e3f2fd;
+    border: 1px solid #2196F3;
+    color: #1565C0;
+    padding: 12px;
+    border-radius: 5px;
+    margin: 15px 0;
+    font-size: 0.9em;
+    display: block;
+}
+
+/* =================================
+   RESPONSIVE DESIGN
+   ================================= */
+
+@media (min-width: 768px) {
+
+    /* Layout para tablets y desktop */
+    .specs {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .container {
+        max-width: 1200px;
+        padding: 0 20px;
+    }
+
+    body {
+        padding: 20px;
+    }
+
+    .viewer {
+        height: 70vh;
+        min-height: 500px;
+    }
+
+    .title {
+        font-size: 1.5em;
+        margin-bottom: 20px;
+    }
+
+    /* Ocultar instrucciones móviles en desktop */
+    .mobile-instructions {
+        display: none;
+    }
+}
+
+/* =================================
+   MEJORAS DE ACCESIBILIDAD
+   ================================= */
+
+.control-btn:focus,
+.zoom-btn:focus {
+    outline: 2px solid #2196F3;
+    outline-offset: 2px;
+}
+
+/* Prevencion de selección de texto */
+.viewer,
+.control-btn,
+.zoom-btn {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
